@@ -56,3 +56,7 @@ Or using Eclipse:
 1. Select the ``mvn-repo`` project in Eclipse
 2. Select the ``build.xml`` file
 3. Run the script using "Run As > Ant Build".
+
+### Local Repository
+
+After running the script, a new folder is created with a local Maven repository. The script creates the repository in the ``mvn-local-repo`` folder. (This folder is not included in the Git repository)  
