@@ -15,13 +15,26 @@ However, there are many java libraries that does not include information about d
 
 ### Usage
 
-In order to use the repository in your projects, you must include the repository information in your ``pom.xml``.
+In order to use the repository in your projects, you can use a Github-hosted or a local repository. In both cases, must include the repository information in your ``pom.xml``.
+
+To use the Github-hosted repository, you must include the following:
+
+```xml
+	<repositories>
+		<repository>
+			<id>ticsw-mvn-repo</id>
+			<url>http://ticsw.github.io/mvn-repo/</url>
+		</repository>
+	</repositories>
+``` 
+
+To use a local repository, you must install the repository and include its information in your ``pom.xm``
 
 ```xml
 	<repositories>
 		<!-- An example local Maven repository -->			
 		<repository>
-			<id>firewell.local</id>
+			<id>local-mvn-repo</id>
 			<name>Maven local repository</name>
 			<url>file:${project.basedir}/mvn-local-repo</url>
 			<releases>
