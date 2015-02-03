@@ -1,10 +1,9 @@
 # TiCSw Maven Repository
-A Maven repository for TiCSw (for libraries not available in Maven Central) 
+A Maven repository for libraries not available in Maven Central used in some TiCSw projects.
 
 ### What is this?
 
-This is a Maven repository for some libraries that do not include information about their dependencies or include errors in it. 
-
+This is a Maven repository for some libraries that do not include or have errors in the information about their dependencies. 
 [Maven][maven] is a software building system that keep track of dependencies. When a developer defines a dependency for a project, Maven use that information to download the libraries and all the transitive dependencies before building. In addition, developers may use Maven tools to detect errors and conflicts.
 
 However, there are many java libraries that does not include information about dependencies that may used by Maven. In addition, many projects built using Maven, such as some [Eclipse][eclipse] plugins created with [Maven Tycho][tycho], includes information about dependencies that cannot be used outside Eclipse (e.g. web applications).
@@ -62,7 +61,7 @@ To install the libraries in your local Maven repository:
 
 After modifying the script, you can run it using the command line
 
-    $ ant build
+    $ ant build.xml
 
 Or using Eclipse:
 
