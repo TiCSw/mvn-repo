@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="mvn-repo" default="main" xmlns:artifact="urn:maven-artifact-ant">
+
+	<description>
+		Script to create a maven repository with the SPLAR library
+	</description>
+
+	<!-- External ant tasks definition -->
+	<!-- ============================= -->
+
+	<target name="init">
+		
+		<!-- Maven ant tasks registration -->
+		<path id="maven-ant-tasks.classpath" 
+			path="${basedir}/lib/maven-ant-tasks-2.1.3.jar" />
+		<typedef resource="org/apache/maven/artifact/ant/antlib.xml" 
+			uri="urn:maven-artifact-ant" 
+			classpathref="maven-ant-tasks.classpath"/>
+		
+		<!-- Parameters -->
+		<property name="splar.lib.directory" 
+			value="${basedir}/jars/ca.uwaterloo.gsd"/>
+		<property name="splar.pom.directory" 
+			value="${basedir}/poms/ca.uwaterloo.gsd"/>
+		
+		<!-- Maven repositories -->
+		<property name="deploy.repository.url" 
+			value="${basedir}/mvn-local-repo"/>
+		<!--
+		<property name="deploy.repository.url" 
+			value="${user.home}/.m2/repository"/>
+		-->
+		<artifact:localRepository 
+			id="local.repository" 
+			path="${deploy.repository.url}" layout="default"/>
+		<artifact:remoteRepository 
+			id="deploy.repository" 
+			url="file://localhost/${deploy.repository.url}" layout="default"/>
+		
+	</target>
+	
+	<!-- create repository -->
+	<target name="install-splar" depends="init">
+				
+		<!-- install artifacts into the local repository -->
+		<artifact:pom id="splar.pom" file="${splar.pom.directory}/splar.pom.xml" />
+		<artifact:deploy file="${splar.lib.directory}/splar-1.0.0.jar">
+			<remoteRepository refid="deploy.repository"/>
+			<localrepository refid="local.repository"/>
+			<pom refid="splar.pom" />
+		</artifact:deploy>
+
+	</target>
+	
+	<target name="main" depends="install-splar">
+	</target>
+	
+</project>
