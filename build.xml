@@ -215,6 +215,14 @@
 	<target name="install-alloy" depends="init, create-alloy-pom">
 				
 		<!-- install artifacts into the local repository -->
+
+		<!-- alloy 4.2-20150222 -->
+		<artifact:pom id="alloy.4.2-20150222.pom" file="${alloy.pom.directory}/alloy.4.2-20150222.pom.xml" />
+		<artifact:deploy file="${alloy.lib.directory}/alloy4.2_2015-02-22.jar">
+			<remoteRepository refid="deploy.repository"/>
+			<localrepository refid="local.repository"/>
+			<pom refid="alloy.4.2-20150222.pom" />
+		</artifact:deploy>
 		
 		<!-- alloy 4.2-20140516 -->
 		<artifact:pom id="alloy.4.2-20140516.pom" file="${alloy.pom.directory}/alloy.4.2-20140516.pom.xml" />
