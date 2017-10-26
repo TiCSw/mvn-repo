@@ -5,7 +5,7 @@
   <groupId>edu.mit</groupId>
   <artifactId>edu.mit.alloy</artifactId>
   <version>4.2.0</version>
-  <name>Maven Default Project</name>
+  <name>Alloy v4.2</name>
   <licenses>
     <license>
       <name>mit</name>
