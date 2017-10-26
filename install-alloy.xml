@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="mvn-repo" default="main" xmlns:artifact="urn:maven-artifact-ant">
+
+	<description>
+		Script to create a maven repository
+	</description>
+
+	<!-- External ant tasks definition -->
+	<!-- ============================= -->
+
+	<target name="init">
+		
+		<!-- Maven ant tasks registration -->
+		<path id="maven-ant-tasks.classpath" 
+			path="${basedir}/lib/maven-ant-tasks-2.1.3.jar" />
+		<typedef resource="org/apache/maven/artifact/ant/antlib.xml" 
+			uri="urn:maven-artifact-ant" 
+			classpathref="maven-ant-tasks.classpath"/>
+		
+		<!-- Parameters -->
+		<property name="alloy.lib.directory" 
+			value="${basedir}/jars/edu.mit.alloy"/>
+		<property name="alloy.pom.directory" 
+			value="${basedir}/poms/edu.mit.alloy"/>
+		
+		<!-- Maven repositories -->
+		<property name="deploy.repository.url" 
+			value="${basedir}/mvn-local-repo"/>
+		<!--
+		<property name="deploy.repository.url" 
+			value="${user.home}/.m2/repository"/>
+		-->
+		<artifact:localRepository 
+			id="local.repository" 
+			path="${deploy.repository.url}" layout="default"/>
+		<artifact:remoteRepository 
+			id="deploy.repository" 
+			url="file://localhost/${deploy.repository.url}" layout="default"/>
+		
+	</target>
+
+	<!-- create pom.xml files -->
+	<target name="create-alloy-pom" depends="init">
+
+		<!-- alloy 4.2-20140516 --> 
+		<artifact:pom id="alloy.4.2-20150222" 
+			groupId="edu.mit" artifactId="edu.mit.alloy" version="4.2-20150222"
+			name="Alloy v4.2 20150222">
+			<license name="mit" url="http://opensource.org/licenses/MIT" />			
+		</artifact:pom>
+		<artifact:writepom pomRefId="alloy.4.2-20150222" file="${alloy.pom.directory}/alloy.4.2-20150222.pom.xml" />
+		
+		<!-- alloy 4.2-20140516 --> 
+		<artifact:pom id="alloy.4.2-20140516" 
+			groupId="edu.mit" artifactId="edu.mit.alloy" version="4.2-20140516"
+			name="Alloy v4.2 20140516">			
+			<license name="mit" url="http://opensource.org/licenses/MIT" />			
+		</artifact:pom>
+		<artifact:writepom pomRefId="alloy.4.2-20140516" file="${alloy.pom.directory}/alloy.4.2-20140516.pom.xml" />
+
+		<!-- alloy 4.2.0 --> 
+		<artifact:pom id="alloy.4.2.0" 
+			groupId="edu.mit" artifactId="edu.mit.alloy" version="4.2.0"
+			name="Alloy v4.2"> 		
+			<license name="mit" url="http://opensource.org/licenses/MIT" />			
+		</artifact:pom>
+		<artifact:writepom pomRefId="alloy.4.2.0" file="${alloy.pom.directory}/alloy.4.2.0.pom.xml" />
+
+	</target>
+	
+	<!-- create repository -->
+	<target name="install-alloy" depends="init, create-alloy-pom">
+				
+		<!-- install artifacts into the local repository -->
+
+		<!-- alloy 4.2-20150222 -->
+		<artifact:pom id="alloy.4.2-20150222.pom" file="${alloy.pom.directory}/alloy.4.2-20150222.pom.xml" />
+		<artifact:deploy file="${alloy.lib.directory}/alloy4.2_2015-02-22.jar">
+			<remoteRepository refid="deploy.repository"/>
+			<localrepository refid="local.repository"/>
+			<pom refid="alloy.4.2-20150222.pom" />
+		</artifact:deploy>
+		
+		<!-- alloy 4.2-20140516 -->
+		<artifact:pom id="alloy.4.2-20140516.pom" file="${alloy.pom.directory}/alloy.4.2-20140516.pom.xml" />
+		<artifact:deploy file="${alloy.lib.directory}/alloy4.2_2014-05-16.jar">
+			<remoteRepository refid="deploy.repository"/>
+			<localrepository refid="local.repository"/>
+			<pom refid="alloy.4.2-20140516.pom" />
+		</artifact:deploy>
+				
+		<!-- alloy 4.2.0 -->
+		<artifact:pom id="alloy.4.2.0.pom" file="${alloy.pom.directory}/alloy.4.2.0.pom.xml" />
+		<artifact:deploy file="${alloy.lib.directory}/alloy4.2.jar">
+			<remoteRepository refid="deploy.repository"/>
+			<localrepository refid="local.repository"/>
+			<pom refid="alloy.4.2.0.pom" />
+		</artifact:deploy>
+		
+	</target>
+
+	<target name="main" depends="install-alloy">
+	</target>
+	
+</project>
