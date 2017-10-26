@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>edu.mit</groupId>
+  <artifactId>edu.mit.alloy</artifactId>
+  <version>4.2-20150222</version>
+  <versioning>
+    <versions>
+      <version>4.2-20150222</version>
+      <version>4.2-20140516</version>
+      <version>4.2.0</version>
+    </versions>
+    <lastUpdated>20171026174750</lastUpdated>
+  </versioning>
+</metadata>

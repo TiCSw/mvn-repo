@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.eclipse.epsilon</groupId>
+  <artifactId>org.eclipse.epsilon.emc.graphml</artifactId>
+  <version>1.x</version>
+  <name>Maven Default Project</name>
+  <licenses>
+    <license>
+      <name>epl</name>
+      <url>http://www.eclipse.org/legal/epl-v10.html</url>
+    </license>
+  </licenses>
+  <dependencies>
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>jdom</artifactId>
+      <version>1.1.2</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>maven-cobertura-plugin</artifactId>
+          <groupId>maven-plugins</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>maven-findbugs-plugin</artifactId>
+          <groupId>maven-plugins</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.epsilon</groupId>
+      <artifactId>org.eclipse.epsilon.common</artifactId>
+      <version>1.x</version>
+    </dependency>
+  </dependencies>
+</project>
