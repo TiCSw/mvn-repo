@@ -25,7 +25,7 @@
 		
 		<!-- Maven repositories -->
 		<property name="deploy.repository.url" 
-			value="${basedir}/mvn-repo"/>
+			value="${basedir}/docs"/>
 		<!--
 		<property name="deploy.repository.url" 
 			value="${user.home}/.m2/repository"/>
