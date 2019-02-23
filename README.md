@@ -27,7 +27,7 @@ To use the Github-hosted repository, you must include the following:
 	</repositories>
 ``` 
 
-To use a local repository, you must install the repository and include its information in your ``pom.xm``
+To use a local repository, you must install this project and include the information of your local installation in your ``pom.xm``
 
 ```xml
 	<repositories>
