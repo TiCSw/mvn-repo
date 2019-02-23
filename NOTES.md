@@ -1,5 +1,11 @@
 # Notes for the Maven Repository
 
+- [Eclipse dependencies](#eclipse-dependencies)
+- [Epsilon libraries](#epsilon-libraries)
+- [Eclipse UML2 libraries](#eclipse-uml2-libraries)
+
+---
+
 ### Eclipse dependencies
 
 Eclipse plugins included in the repository has dependencies to plugins/libraries in the Maven Central. The Eclipse plugis included in Maven central are not included in this repository.
@@ -64,6 +70,8 @@ In addition, a dependency to the Eclipse Core Runtime may be specified as the fo
 ```
 
 ### Epsilon libraries
+
+> **NOTE:** Starting from version 1.4.0, released at 2016, there are Epsilon packages in the [Maven central](https://mvnrepository.com/artifact/org.eclipse.epsilon).
 
 [Epsilon plugins/libraries][epsilon] are included in this repository. The following were obtained from the [Epsilon download page][epsilon-downloads]:
 
