@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.ovgu.featureide</groupId>
+	<artifactId>de.ovgu.featureide.lib.fm</artifactId>
+	<version>3.5.3</version>
+
+	<name>FeatureIDE library for feature model core</name>
+	<description>Sample library for feature model core</description>
+	<url>https://github.com/FeatureIDE/FeatureIDE</url>
+
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<dependencies>
+		<!-- from TiCSw Maven repository -->
+		<dependency>
+			<groupId>featureide.dependencies</groupId>
+			<artifactId>guidsl</artifactId>
+			<version>1.7.0</version>
+		</dependency>		
+		<dependency>
+			<groupId>featureide.dependencies</groupId>
+			<artifactId>jakarta</artifactId>
+			<version>1.6.5</version>
+		</dependency>
+		<dependency>
+			<groupId>featureide.dependencies</groupId>
+			<artifactId>annotations</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
+		<!-- from maven central -->
+		<dependency>
+		    <groupId>org.antlr</groupId>
+		    <artifactId>antlr</artifactId>
+		    <version>3.4</version>
+		</dependency>	
+		<dependency>
+		    <groupId>org.ow2.sat4j</groupId>
+		    <artifactId>org.ow2.sat4j.core</artifactId>
+		    <version>2.3.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.ow2.sat4j</groupId>
+		    <artifactId>org.ow2.sat4j.pb</artifactId>
+		    <version>2.3.5</version>
+		</dependency>
+		
+	</dependencies>
+
+</project>

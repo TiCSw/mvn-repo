@@ -1,10 +1,32 @@
 # Notes for the Maven Repository
 
+- [FeatureIDE libraries](#featureide-libraries)
 - [Eclipse dependencies](#eclipse-dependencies)
 - [Epsilon libraries](#epsilon-libraries)
 - [Eclipse UML2 libraries](#eclipse-uml2-libraries)
 
 ---
+
+### FeatureIDE libraries
+
+FeatureIDE libraries included in this repository has dependencies to libraries in both, this same repository and the Maven Central. Libraries included in Maven Central are not included in this repository.
+
+To use the FeatureIDE libraries, you can specify the following dependencies:
+```xml
+		<!-- FeatureIDE --> 
+		<dependency>
+			<groupId>de.ovgu.featureide</groupId>
+			<artifactId>de.ovgu.featureide.lib.fm</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+		<!-- optional support for feature models with attributes -->	
+		<dependency>
+			<groupId>de.ovgu.featureide</groupId>
+			<artifactId>de.ovgu.featureide.lib.fm.attributes</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+``` 
+
 
 ### Eclipse dependencies
 

@@ -14,6 +14,8 @@ However, there are many java libraries that does not include information about d
 
 ### Usage
 
+You can include `dependency` tags in your `pom.xml` as normal. You may check the [NOTES.md](NOTES.md) file in this repository to check the included libraries. 
+
 In order to use the repository in your projects, you can use a Github-hosted or a local repository. In both cases, must include the repository information in your ``pom.xml``.
 
 To use the Github-hosted repository, you must include the following:

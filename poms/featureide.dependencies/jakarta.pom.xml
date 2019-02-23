@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>featureide.dependencies</groupId>
+	<artifactId>jakarta</artifactId>
+	<version>1.6.5</version>
+	
+	<name>Jakarta Library</name>
+	<organization>
+		<name>Apache Foundation</name>
+		<url>https://www.apache.org/</url>
+	</organization>
+	<url>https://jakarta.apache.org/</url>
+	
+	<licenses>
+		<license>
+			<name>Apache License, v2.0</name>
+			<url>http://www.apache.org/licenses/</url>
+		</license>
+	</licenses>
+	
+</project>
